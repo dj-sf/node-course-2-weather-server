@@ -32,12 +32,18 @@ app.use((req, res, next) =>{
     next(); 
 })
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs', {
-        pageTitle: 'Site Under Maintenance',
-        welcomeMessage: 'Please check back soon',
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects',
     })
 })
+
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs', {
+//         pageTitle: 'Site Under Maintenance',
+//         welcomeMessage: 'Please check back soon',
+//     })
+// })
 
 app.get('/', (req, res) =>{
     // res.send('<h1>Hello Express!</h1>');
